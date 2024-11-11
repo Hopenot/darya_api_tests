@@ -1,7 +1,6 @@
 import requests
 import allure
 
-
 from endpoints.base_api import BaseApi
 from data.constants import BASE_URL
 from data.test_data import CREATE_MEME
@@ -25,4 +24,3 @@ class CreateMeme(BaseApi):
         assert self.data.url == payload['url']
         assert self.data.info == payload['info']
         assert self.data.text == payload['text']
-
