@@ -1,7 +1,6 @@
 import requests
 import allure
 
-
 from endpoints.base_api import BaseApi
 from data.constants import MEME_POSTFIX, BASE_URL
 from models.memes_object import MemeJson

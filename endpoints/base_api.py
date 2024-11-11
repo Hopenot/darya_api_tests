@@ -1,13 +1,9 @@
-from abc import abstractmethod
-
 import allure
-import pytest
 import requests
 
+from abc import abstractmethod
 from requests import Response
 from data import test_data
-
-from data import constants
 from data.constants import AUTH_URL
 
 
