@@ -8,8 +8,13 @@ from models.memes_object import MemeJson
 
 
 class CreateMeme(BaseApi):
-    def create_meme(self, payload=None):
-        header = {'Authorization': self.token}
+    def create_meme(self, token, payload=None):
+        header = {"Authorization": f"{token}"}
+        payload = payload if payload else CREATE_MEME
+        self.response = requests.post(f'{BASE_URL}', json=payload, headers=header)
+
+    def create_meme_as_unauthorized_user(self, payload=None):
+        header = {}
         payload = payload if payload else CREATE_MEME
         self.response = requests.post(f'{BASE_URL}', json=payload, headers=header)
 

@@ -7,9 +7,9 @@ from models.memes_object import DeleteMemeModel
 
 
 class DeleteMeme(BaseApi):
-    def delete_meme(self, mem_id):
-        header = {'Authorization': self.token}
-        self.response = requests.delete(f'{BASE_URL}/{MEME_POSTFIX}/{mem_id}', headers=header)
+    def delete_meme(self, token, mem_id):
+        header = {"Authorization": f"{token}"}
+        self.response = requests.delete(f'{BASE_URL}{MEME_POSTFIX}{mem_id}', headers=header)
 
     @property
     def data(self):
